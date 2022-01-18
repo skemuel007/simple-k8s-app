@@ -7,6 +7,7 @@ docker build -t [docker-registry-username]/first-app:v1 .
 ```
 
 Push Image to docker registry
+**Note:** Must have docker registry account
 ```console
 docker push [docker-registry-username]/first-app:v1
 ```
@@ -25,11 +26,10 @@ kubectl -n default apply -f k8s
 curl `minikube service -n default first-app --url`
 ```
 
+_where `k8s` is the folder containing deployment and service yaml files respectively_
+
 Check pods and services
 ```console
 kubectl -n default get pods
 kubectl -n default get services
 ```
-
-
-_where `k8s` is the folder containing deployment and service yaml files respectively_
