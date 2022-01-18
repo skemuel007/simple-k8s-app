@@ -6,6 +6,11 @@ minikube `docker-env`
 docker build -t [docker-registry-username]/first-app:v1 .
 ```
 
+Push Image to docker registry
+```console
+docker push [docker-registry-username]/first-app:v1
+```
+
 Test application in Docker.
 
 ```console
@@ -16,5 +21,15 @@ curl `minikube ip`:8000
 Test application locally with Minikube.
 
 ```console
-kubectl -n default apply -f kubernetes
+kubectl -n default apply -f k8s
 curl `minikube service -n default first-app --url`
+```
+
+Check pods and services
+```console
+kubectl -n default get pods
+kubectl -n default get services
+```
+
+
+_where `k8s` is the folder containing deployment and service yaml files respectively_
